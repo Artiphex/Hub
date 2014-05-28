@@ -1,0 +1,13 @@
+name: Hub
+version: 0.1
+author: iron42
+
+main: de.iron42.hub.Hub
+
+commands:
+  store:
+    description: Store
+    usage: /store
+  cc:
+    description: clear the chat
+    usage: /cc
