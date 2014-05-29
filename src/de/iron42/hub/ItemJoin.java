@@ -32,7 +32,7 @@ public class ItemJoin implements Listener {
 		Player p = e.getPlayer();
 			if (e.getAction() == Action.RIGHT_CLICK_AIR | e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if(e.getMaterial().equals(Material.INK_SACK)) {
-					this.inv = p.getServer().createInventory(null, 9, "§3§lControll Panel");
+					this.inv = p.getServer().createInventory(null, 9, "§3§lControl Panel");
 					ItemStack item = new ItemStack (Material.WATCH);
 					ItemStack item2 = new ItemStack (Material.GREEN_RECORD);
 					
@@ -149,7 +149,7 @@ public class ItemJoin implements Listener {
 		Player p = (Player) e.getWhoClicked();
 		
 		
-		if (e.getInventory().getName().equalsIgnoreCase("§3§lControll Panel")) {
+		if (e.getInventory().getName().equalsIgnoreCase("§3§lControl Panel")) {
 			if(e.getCurrentItem().getType() == Material.WATCH) {
 				e.setCancelled(true);
 				e.setResult(Result.DENY);
@@ -175,7 +175,7 @@ public class ItemJoin implements Listener {
 		e.setCancelled(true);
 		e.setResult(Result.DENY);
 		p.closeInventory();
-		p.performCommand("gamerule doDaylightCycle true");
+		Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle true");
 		for(World world : Bukkit.getWorlds()) {
 			world.setTime(5200);
 		}
@@ -183,7 +183,7 @@ public class ItemJoin implements Listener {
 			e.setCancelled(true);
 			e.setResult(Result.DENY);
 			p.closeInventory();
-			p.performCommand("gamerule doDaylightCycle true");
+			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle true");
 			
 			for(World world : Bukkit.getWorlds()) {
 				world.setTime(18000);
@@ -192,7 +192,7 @@ public class ItemJoin implements Listener {
 			e.setCancelled(true);
 			e.setResult(Result.DENY);
 			p.closeInventory();
-			p.performCommand("gamerule doDaylightCycle false");
+			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "gamerule doDaylightCycle false");
 		}
 	}
 
@@ -213,7 +213,7 @@ public class ItemJoin implements Listener {
 		meta.setDisplayName("§2Lobby");
 		meta2.setDisplayName("§cHide Players");
 		meta3.setDisplayName("§3Teleport");
-		meta4.setDisplayName("§3Controll Panel");
+		meta4.setDisplayName("§3Control Panel");
 		
 		
 		meta.setLore(null);
